@@ -1,6 +1,6 @@
 [build]
   publish = "preview/public"
-  command = "cd preview && npm install"
+  command = "echo 'Static files ready for deployment'"
 
 [build.environment]
   NODE_VERSION = "18"
