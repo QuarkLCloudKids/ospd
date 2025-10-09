@@ -17,6 +17,7 @@ coverage/
 # nyc test coverage
 .nyc_output
 
+<<<<<<< HEAD
 # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
@@ -38,18 +39,23 @@ typings/
 # TypeScript cache
 *.tsbuildinfo
 
+=======
+>>>>>>> 439931c05dd16a74bb704ffcef1ea82e4a529d59
 # Optional npm cache directory
 .npm
 
 # Optional eslint cache
 .eslintcache
 
+<<<<<<< HEAD
 # Microbundle cache
 .rpt2_cache/
 .rts2_cache_cjs/
 .rts2_cache_es/
 .rts2_cache_umd/
 
+=======
+>>>>>>> 439931c05dd16a74bb704ffcef1ea82e4a529d59
 # Optional REPL history
 .node_repl_history
 
@@ -63,6 +69,7 @@ typings/
 .env
 .env.test
 .env.production
+<<<<<<< HEAD
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -84,6 +91,25 @@ public
 
 # Serverless directories
 .serverless/
+=======
+.env.local
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless
+>>>>>>> 439931c05dd16a74bb704ffcef1ea82e4a529d59
 
 # FuseBox cache
 .fusebox/
@@ -97,6 +123,7 @@ public
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+<<<<<<< HEAD
 # yarn v2
 .yarn/cache
 .yarn/unplugged
@@ -112,6 +139,22 @@ preview/downloads/*.avi
 preview/downloads/*.mov
 
 # Logs
+=======
+# Downloads folder
+downloads/
+*.mp4
+*.mp3
+*.webm
+*.mkv
+
+# Binaries
+bin/
+*.exe
+*.zip
+
+# Logs
+logs
+>>>>>>> 439931c05dd16a74bb704ffcef1ea82e4a529d59
 *.log
 
 # OS generated files
