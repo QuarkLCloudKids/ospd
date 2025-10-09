@@ -126,6 +126,22 @@
           errorEl.hidden = true;
           errorEl.style.color = '';
         }, 3000);
+      } else if (data.success && data.message) {
+        // Mostrar información del video procesado
+        errorEl.innerHTML = `
+          <strong>Video procesado:</strong><br>
+          <strong>Título:</strong> ${data.title || 'N/A'}<br>
+          <strong>Canal:</strong> ${data.uploader || 'N/A'}<br>
+          <strong>Duración:</strong> ${data.duration || 'N/A'}<br>
+          <br>
+          <em>${data.message}</em>
+        `;
+        errorEl.style.color = '#ff6b35';
+        errorEl.hidden = false;
+        setTimeout(() => {
+          errorEl.hidden = true;
+          errorEl.style.color = '';
+        }, 8000);
       } else {
         errorEl.textContent = 'Error: No se pudo obtener el archivo descargado';
         errorEl.hidden = false;
