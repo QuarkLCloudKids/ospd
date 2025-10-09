@@ -1,6 +1,6 @@
 [build]
-  publish = "preview/public"
-  command = "cd preview && npm install"
+  publish = "public"
+  command = "echo 'No build command needed'"
 
 [build.environment]
   NODE_VERSION = "18"
