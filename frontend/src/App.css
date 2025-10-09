@@ -1,0 +1,102 @@
+:root {
+  color-scheme: light dark;
+}
+
+#root {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+}
+
+.subtitle {
+  color: #888;
+  margin-top: .5rem;
+}
+
+.card {
+  margin-top: 1.5rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+input[type="url"] {
+  width: 100%;
+  padding: .75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.15);
+  color: inherit;
+}
+
+.actions {
+  display: flex;
+  gap: .75rem;
+  margin-top: 1rem;
+}
+
+.ad-btn, .download-btn {
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+}
+
+.ad-btn {
+  background: #ffe08a;
+  color: #1e293b;
+}
+
+.download-btn {
+  background: #4f46e5;
+  color: white;
+}
+
+.download-btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.error { color: #ff6b6b; margin-top: .5rem; }
+.notice { color: #aaa; font-size: .9rem; margin-top: .75rem; }
+
+.ad-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: grid;
+  place-items: center;
+}
+
+.ad-box {
+  width: min(520px, 90vw);
+  background: #0b1220;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+}
+
+.ad-content {
+  border: 1px dashed rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: .75rem 0;
+}
+
+.ad-placeholder {
+  height: 180px;
+  display: grid;
+  place-items: center;
+  background: #0e1a2d;
+  color: #cbd5e1;
+}
