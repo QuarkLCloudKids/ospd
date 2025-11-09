@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OPSD</string>
+    
+    <!-- Navigation -->
+    <string name="nav_download">Descargar</string>
+    <string name="nav_info">Info</string>
+    <string name="nav_downloaded_videos">Videos descargados</string>
+    
+    <!-- Download Screen -->
+    <string name="download_title">Descarga Videos de TikTok</string>
+    <string name="download_subtitle">Pega la URL del video que quieres descargar</string>
+    <string name="url_hint">https://www.tiktok.com/@usuario/video/...</string>
+    <string name="paste_from_clipboard">Pegar del portapapeles</string>
+    <string name="download_button">Descargar Video</string>
+    <string name="downloading">Descargando...</string>
+    <string name="download_success">¡Descarga completada!</string>
+    <string name="download_error">Error en la descarga</string>
+    <string name="invalid_url">URL no válida</string>
+    <string name="quick_tile_tip">💡 Tip: Agrega el tile de OPSD al centro de control para descargas rápidas</string>
+    
+    <!-- Info Screen -->
+    <string name="info_title">Acerca de OPSD</string>
+    <string name="app_features_title">Características de la App</string>
+    <string name="feature_fast_download">⚡ Descargas rápidas y confiables</string>
+    <string name="feature_quick_tile">🎯 Quick Settings Tile para acceso rápido</string>
+    <string name="feature_background">🔄 Descargas en segundo plano</string>
+    <string name="feature_notifications">🔔 Notificaciones de progreso</string>
+    <string name="feature_auto_detect">🤖 Detección automática de videos</string>
+    <string name="feature_high_quality">📱 Descarga en alta calidad</string>
+    
+    <string name="app_usage_title">Usos de la Aplicación</string>
+    <string name="usage_content_creation">🎬 Creación de contenido y edición</string>
+    <string name="usage_offline_viewing">📱 Visualización offline de videos favoritos</string>
+    <string name="usage_backup">💾 Respaldo de contenido propio</string>
+    <string name="usage_education">📚 Uso educativo y de referencia</string>
+    <string name="usage_research">🔍 Investigación y análisis de tendencias</string>
+    
+    <string name="developer_title">Desarrollado por</string>
+    <string name="developer_name">Quarkl Cloud</string>
+    <string name="developer_description">Quarkl Cloud es una empresa líder en desarrollo de software, especializada en crear soluciones innovadoras y eficientes para dispositivos móviles, web y servicios en la nube. Nos enfocamos en brindar herramientas que mejoren la productividad y experiencia del usuario.</string>
+    
+    <string name="company_info_title">Acerca de Quarkl Cloud</string>
+    <string name="company_mission">🎯 Misión: Democratizar el acceso a herramientas tecnológicas avanzadas</string>
+    <string name="company_vision">🚀 Visión: Ser la empresa de referencia en soluciones digitales innovadoras</string>
+    <string name="company_values">💎 Valores: Innovación, Calidad, Transparencia y Compromiso con el usuario</string>
+    
+    <string name="contact_title">Contacto</string>
+    <string name="contact_email">📧 info@quarlcloud.com</string>
+    <string name="contact_website">🌐 www.quarlcloud.com</string>
+    <string name="contact_support">💬 Soporte técnico 24/7 disponible</string>
+    <string name="contact_social">📱 Síguenos en redes sociales @QuarlCloud</string>
+    
+    <string name="copyright_title">Derechos de Autor</string>
+    <string name="copyright_notice">© 2024 Quarkl Cloud. Todos los derechos reservados.</string>
+    <string name="copyright_license">📄 Licencia: Uso personal y educativo permitido</string>
+    <string name="copyright_disclaimer">⚠️ Esta aplicación es para uso personal. Respeta los derechos de autor del contenido descargado.</string>
+    <string name="copyright_terms">📋 Al usar esta app, aceptas nuestros términos de servicio y política de privacidad</string>
+    
+    <string name="technical_title">Información Técnica</string>
+    <string name="tech_version">Versión: 1.0.0</string>
+    <string name="tech_build">Build: 2024.01</string>
+    <string name="tech_android">Android mínimo: 7.0 (API 24)</string>
+    <string name="tech_permissions">Permisos: Internet, Almacenamiento, Notificaciones</string>
+    
+    <!-- Quick Settings Tile -->
+    <string name="tile_label">OPSD</string>
+    <string name="tile_subtitle">Descargar video</string>
+    <string name="tile_active">TikTok detectado</string>
+
+    <!-- Accesibilidad -->
+    <string name="accessibility_service_description">Servicio para automatizar «Copiar enlace» en TikTok y descargar automáticamente</string>
+    <string name="tile_inactive">Abrir TikTok</string>
+    <string name="tile_downloading">Descargando...</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_name">Descargas</string>
+    <string name="notification_channel_description">Notificaciones de descarga de videos</string>
+    <string name="notification_downloading">Descargando video...</string>
+    <string name="notification_download_complete">Descarga completada</string>
+    <string name="notification_download_error">Error en descarga</string>
+    
+    <!-- Permissions -->
+    <string name="permission_storage_title">Permiso de almacenamiento</string>
+    <string name="permission_storage_message">OpSDonwloades necesita acceso al almacenamiento para guardar los videos descargados.</string>
+    <string name="permission_notification_title">Permiso de notificaciones</string>
+    <string name="permission_notification_message">Permite recibir notificaciones sobre el progreso de las descargas.</string>
+    
+    <!-- Errors -->
+    <string name="error_no_internet">Sin conexión a internet</string>
+    <string name="error_server_unavailable">Servidor no disponible</string>
+    <string name="error_invalid_tiktok_url">URL de TikTok no válida</string>
+    <string name="error_download_failed">Error al descargar el video</string>
+    <string name="error_storage_permission">Permiso de almacenamiento requerido</string>
+    
+    <!-- General -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="retry">Reintentar</string>
+    <string name="settings">Configuración</string>
+</resources>

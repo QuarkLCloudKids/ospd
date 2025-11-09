@@ -1,5 +1,5 @@
 [build]
-  publish = "preview/public"
+  publish = "docs"
   command = "echo 'Static files ready for deployment'"
 
 [build.environment]

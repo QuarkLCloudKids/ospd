@@ -166,3 +166,13 @@ logs
 .Trashes
 ehthumbs.db
 Thumbs.db
+ 
+# Android build artifacts (no subir compilados)
+android-app/**/build/
+android-app/.gradle/
+android-app/local.properties
+android-app/app/build2/
+android-app/app/build2_locked_*/
+
+# Asegurar publicación del APK en la landing
+!docs/downloads/opsd.apk
