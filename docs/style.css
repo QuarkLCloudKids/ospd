@@ -125,6 +125,27 @@ body {
   text-decoration: none;
   font-weight: 700;
   border: 1px solid rgba(31,40,64,.5);
+  /* respetar áreas seguras en móviles con notch */
+  margin-bottom: env(safe-area-inset-bottom, 0px);
 }
 .float-cta:hover { transform: translateY(-1px); }
 .float-cta:active { transform: translateY(0); }
+
+/* Ajustes específicos para pantallas pequeñas (UI móvil) */
+@media (max-width: 480px) {
+  .header-inner { flex-wrap: wrap; gap: 8px; padding: 8px 0; }
+  .nav { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; padding-bottom: 6px; gap: 10px; }
+  .nav a { font-size: 14px; padding: 8px 10px; }
+
+  .hero { padding: 56px 0 24px; }
+  .hero h1 { font-size: 28px; line-height: 1.25; }
+  .subtitle { font-size: 15px; }
+
+  .cta { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .btn, .btn-primary, .btn-lg { width: 100%; }
+
+  .feature-list li, .roadmap-list li { padding: 12px 14px; }
+  .faq-list details { padding: 12px 14px; }
+
+  .float-cta { right: 12px; bottom: 12px; padding: 12px 14px; font-size: 14px; }
+}
