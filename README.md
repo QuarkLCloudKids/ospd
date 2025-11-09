@@ -1,159 +1,48 @@
-# Quarkl Cloud - Video Downloader
+# OPSD — Descarga videos de TikTok sin marca de agua (Android)
 
-Una aplicación web moderna para descargar videos de YouTube y TikTok con una interfaz intuitiva y barra de progreso en tiempo real.
+OPSD es una aplicación móvil enfocada en una tarea: descargar videos de TikTok sin marca de agua de forma rápida y sencilla. Actualmente está disponible para Android mediante APK.
 
-## 🚀 Características
+## Descarga
 
-- ✅ Descarga videos de YouTube y TikTok
-- 📊 Barra de progreso en tiempo real
-- 🎨 Interfaz moderna y responsive
-- 💰 Integración con Google AdSense
-- 🔧 Backend Node.js robusto
-- 📱 Compatible con dispositivos móviles
+- APK directo: `https://github.com/QuarkLCloudKids/ospd/releases/download/DESCARGAR/opsd.apk`
+- Landing con más detalles: `https://<tu-dominio-netlify>/` (esta web solo sirve para descargar el APK)
 
-## 🛠️ Tecnologías Utilizadas
+## ¿Cómo funciona?
 
-- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
-- **Backend**: Node.js, Express
-- **Descarga**: yt-dlp
-- **Monetización**: Google AdSense
+- Pegas el enlace del video de TikTok en la app.
+- La app obtiene el video original y elimina la marca de agua.
+- Guardas el archivo en tu dispositivo con la mayor calidad disponible.
 
-## 📦 Instalación
+## Estado actual
 
-1. Clona el repositorio:
-```bash
-git clone https://github.com/QuarkLCloudKids/opsdownloader.git
-cd opsdownloader
-```
+- Funcional: TikTok sin marca de agua.
+- Próximo: soporte para Instagram, Facebook y YouTube.
+- Plataforma: Android (APK). iOS en evaluación para futuras versiones.
 
-2. Instala las dependencias:
-```bash
-cd preview
-npm install
-```
+## Por qué es gratis y cómo monetizamos
 
-3. Inicia el servidor:
-```bash
-node server.js
-```
+- Donaciones opcionales: puedes apoyar el desarrollo sin bloquear funciones.
+- Patrocinios discretos: acuerdos visibles y respetuosos, sin rastreo invasivo.
+- Sin anuncios intrusivos: nada de pop‑ups ni banners a pantalla completa.
+- Privacidad primero: no vendemos datos, ni pedimos inicio de sesión.
 
-4. Abre tu navegador en `http://localhost:5500`
+## Instalación (Android)
 
-## 🎯 Uso
+1. Descarga el archivo `opsd.apk`.
+2. Activa “Permitir apps de orígenes desconocidos”.
+3. Abre el APK y sigue los pasos.
 
-1. Ingresa la URL del video de YouTube o TikTok
-2. Haz clic en "Descargar Video"
-3. Observa la barra de progreso mientras se procesa
-4. El video se descargará automáticamente
+> Nota: la versión actual usa firma de debug, ideal para pruebas e instalación directa (no destinada a Play Store).
 
-## 📁 Estructura del Proyecto
+## Avisos
 
-```
-opsdonwloader/
-├── preview/           # Aplicación principal
-│   ├── public/        # Archivos estáticos
-│   ├── downloads/     # Videos descargados
-│   ├── bin/          # Ejecutables (yt-dlp)
-│   └── server.js     # Servidor Node.js
-├── frontend/         # Frontend alternativo (React)
-└── server/          # Servidor alternativo
-```
+- No existe una versión web de la app; la web es una landing para la descarga.
+- OPSD es de uso gratuito, pero no es software de código abierto.
 
-## 🔧 Configuración
+## Autor
 
-### Variables de Entorno
-
-El proyecto utiliza las siguientes configuraciones:
-
-- Puerto del servidor: `5500`
-- Directorio de descargas: `./downloads`
-- Ejecutable yt-dlp: `./bin/yt-dlp.bat` (Windows)
-
-### AdSense
-
-Para configurar AdSense, actualiza el ID del publisher en `public/index.html`:
-
-```html
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-TU-ID-AQUI"></script>
-```
-
-## 🚀 Deploy
-
-### Netlify
-
-El proyecto incluye configuración para Netlify en `netlify.toml`.
-
-### Otros Servicios
-
-Compatible con cualquier servicio que soporte Node.js como:
-- Heroku
-- Vercel
-- Railway
-- DigitalOcean App Platform
-
-## 🤝 Contribuir
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## 👨‍💻 Desarrollado por
-
-**Quarkl Cloud** - Soluciones tecnológicas innovadoras
+Creado por **Quarkl Cloud**.
 
 ---
 
-⭐ ¡No olvides dar una estrella al proyecto si te fue útil!
-=======
-## 📦 Instalación Local
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/tu-usuario/video-downloader.git
-
-# Navegar al directorio
-cd video-downloader
-
-# Instalar dependencias
-npm install
-
-# Iniciar el servidor
-npm start
-```
-
-## 🌐 Uso
-
-1. Visita la aplicación web
-2. Pega el enlace del video de YouTube o TikTok
-3. Haz clic en "Descargar"
-4. Espera a que se procese el video
-5. ¡Disfruta tu contenido descargado!
-
-## ⚖️ Términos de Uso
-
-- Respeta los derechos de autor
-- Solo descarga contenido que tengas derecho a usar
-- Uso responsable de la herramienta
-
-## 💰 Modelo de Negocio
-
-Este es un servicio gratuito financiado mediante publicidad no intrusiva. Los anuncios nos permiten mantener el servicio gratuito y mejorar continuamente la plataforma.
-
-## 👩‍💻 Desarrollado por
-
-**LoopStudio** - Desarrolladora anónima especializada en herramientas web
-
-## 📄 Licencia
-
-Todos los derechos reservados © 2024 LoopStudio
-
----
-
-**Nota**: Esta herramienta está diseñada para uso personal y educativo. Asegúrate de cumplir con los términos de servicio de las plataformas de origen y las leyes de derechos de autor aplicables.
->>>>>>> 439931c05dd16a74bb704ffcef1ea82e4a529d59
+© 2025 Quarkl Cloud. Todos los derechos reservados.
