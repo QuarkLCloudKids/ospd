@@ -231,6 +231,33 @@
       const floatBtn = document.getElementById('download-float');
       if (mainBtn) mainBtn.addEventListener('click', gateDownload);
       if (floatBtn) floatBtn.addEventListener('click', gateDownload);
+
+      // Banners/overlay adicionales: mostrar un vignette como banner en engagement si aún no se mostró
+      (function scheduleExtraVignetteBanner(){
+        let scheduled = false;
+        function showBannerOnce(){
+          if (scheduled || window.__monetagVignetteLoaded) return;
+          scheduled = true;
+          if (typeof window.show_10172029 === 'function') {
+            try { window.show_10172029().catch(() => {}); } catch (_) {}
+            return;
+          }
+          const s = document.createElement('script');
+          s.src = 'https://groleegni.net/vignette.min.js';
+          s.async = true;
+          s.setAttribute('data-zone', '10172029');
+          document.body.appendChild(s);
+        }
+        // tras 18s de permanencia
+        setTimeout(showBannerOnce, 18000);
+        // al llegar a ~65% del scroll
+        window.addEventListener('scroll', () => {
+          if (scheduled || window.__monetagVignetteLoaded) return;
+          const pos = window.scrollY + window.innerHeight;
+          const total = document.body.scrollHeight;
+          if (total && pos/total >= 0.65) showBannerOnce();
+        }, { passive: true });
+      })();
     </script>
   </body>
   </html>
