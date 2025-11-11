@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="./style.css" />
     <!-- Google AdSense: verificación y Auto Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5944264134562590" crossorigin="anonymous"></script>
+    <!-- Monetag Interstitial (Vignette) -->
+    <script>(function(s){s.dataset.zone='10172029';s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
   </head>
   <body>
     <header class="site-header">
@@ -41,7 +43,7 @@
           <h1>Descarga videos de TikTok sin marca de agua</h1>
           <p class="subtitle">La forma más sencilla y rápida. Versión Android disponible.</p>
           <div class="cta" id="descargar">
-            <a class="btn btn-primary btn-lg" href="https://github.com/QuarkLCloudKids/ospd/releases/download/DESCARGAR/opsd.apk" target="_blank" rel="noopener">
+            <a class="btn btn-primary btn-lg" href="https://github.com/QuarkLCloudKids/ospd/releases/download/DESCARGAR/opsd.apk" target="_self" rel="noopener" id="download-main">
               Descargar OPSD (APK)
             </a>
             <p class="cta-note">La descarga inicia automáticamente en una nueva pestaña.</p>
@@ -131,7 +133,7 @@
         </div>
       </section>
 
-      <a class="float-cta" href="https://github.com/QuarkLCloudKids/ospd/releases/download/DESCARGAR/opsd.apk" target="_blank" rel="noopener" aria-label="Descargar OPSD APK">Descargar APK</a>
+      <a class="float-cta" href="https://github.com/QuarkLCloudKids/ospd/releases/download/DESCARGAR/opsd.apk" target="_self" rel="noopener" aria-label="Descargar OPSD APK" id="download-float">Descargar APK</a>
     </main>
 
     <footer class="site-footer">
@@ -143,6 +145,45 @@
 
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Gating por interstitial: contador y liberación de descarga
+      const DOWNLOAD_URL = 'https://github.com/QuarkLCloudKids/ospd/releases/download/DESCARGAR/opsd.apk';
+      const GATE_SECONDS = 12;
+
+      function startGateCountdown(btn) {
+        let remaining = GATE_SECONDS;
+        const label = document.createElement('span');
+        label.className = 'countdown';
+        label.style.marginLeft = '8px';
+        label.textContent = `(espera ${remaining}s)`;
+        btn.appendChild(label);
+        btn.setAttribute('aria-disabled', 'true');
+        btn.classList.add('disabled');
+
+        const t = setInterval(() => {
+          remaining--;
+          label.textContent = `(espera ${remaining}s)`;
+          if (remaining <= 0) {
+            clearInterval(t);
+            btn.removeAttribute('aria-disabled');
+            btn.classList.remove('disabled');
+            try { label.remove(); } catch (_) {}
+            // Liberar descarga en la misma pestaña para evitar bloqueos de popup
+            window.location.href = DOWNLOAD_URL;
+          }
+        }, 1000);
+      }
+
+      function gateDownload(e) {
+        e.preventDefault();
+        const btn = e.currentTarget;
+        startGateCountdown(btn);
+      }
+
+      const mainBtn = document.getElementById('download-main');
+      const floatBtn = document.getElementById('download-float');
+      if (mainBtn) mainBtn.addEventListener('click', gateDownload);
+      if (floatBtn) floatBtn.addEventListener('click', gateDownload);
     </script>
   </body>
   </html>
