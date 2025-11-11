@@ -149,3 +149,17 @@ body {
 
   .float-cta { right: 12px; bottom: 12px; padding: 12px 14px; font-size: 14px; }
 }
+/* Ad slots for aggressive monetization */
+.ad-slot {
+  min-height: 60px;
+  margin: 16px 0;
+  display: block;
+}
+.ad-top { min-height: 90px; }
+.ad-hero { min-height: 250px; }
+.ad-sticky {
+  position: sticky;
+  bottom: 0;
+  min-height: 90px;
+  z-index: 10;
+}
