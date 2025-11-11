@@ -145,6 +145,13 @@
     <script data-zone="10172029" src="https://groleegni.net/vignette.min.js"></script>
 
     <script>
+      // Registrar service worker para verificación cuando sea necesario
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .catch(() => {});
+        });
+      }
       document.getElementById('year').textContent = new Date().getFullYear();
 
       // Gating por interstitial: contador y liberación de descarga
