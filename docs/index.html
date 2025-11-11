@@ -178,6 +178,10 @@
       // Gating por interstitial: carga bajo demanda + contador y liberación de descarga
       const DOWNLOAD_URL = 'https://github.com/QuarkLCloudKids/ospd/releases/download/DESCARGAR/opsd.apk';
       const GATE_SECONDS = 12;
+      const MULTITAG_ZONE = '184442';
+      let multiTagLoads = 0;
+      let multiTagShows = 0;
+      const MULTITAG_SHOW_LIMIT = 6; // límite de impactos por sesión
 
       function loadMonetagMultiTag() {
         // Cargar MultiTag solo una vez y tratar de disparar el formato de pantalla
@@ -190,7 +194,7 @@
         const s = document.createElement('script');
         s.src = 'https://fpyf8.com/88/tag.min.js';
         s.async = true;
-        s.setAttribute('data-zone', '184442');
+        s.setAttribute('data-zone', MULTITAG_ZONE);
         s.setAttribute('data-cfasync', 'false');
         document.body.appendChild(s);
         // Intentar disparar si aparece API show_*
@@ -203,6 +207,17 @@
           }
           if (tries > 20) clearInterval(iv);
         }, 250);
+      }
+
+      function triggerMultiTag(reason = 'generic', force = false) {
+        try { localStorage.setItem('mt_reason_last', reason); } catch (_) {}
+        if (!force && multiTagShows >= MULTITAG_SHOW_LIMIT) return;
+        loadMonetagMultiTag();
+        // Intentar mostrar si existe API
+        if (typeof window.show_184442 === 'function') {
+          try { window.show_184442().catch(() => {}); } catch (_) {}
+        }
+        multiTagShows++;
       }
 
       function startGateCountdown(btn) {
@@ -233,7 +248,7 @@
         e.preventDefault();
         const btn = e.currentTarget;
         // Disparar MultiTag SOLO al hacer clic en descargar
-        loadMonetagMultiTag();
+        triggerMultiTag('download_click', true);
         startGateCountdown(btn);
       }
 
@@ -248,7 +263,7 @@
         function showBannerOnce(){
           if (scheduled || window.__monetagMultiTagLoaded) return;
           scheduled = true;
-          loadMonetagMultiTag();
+          triggerMultiTag('engagement');
         }
         // tras 18s de permanencia
         setTimeout(showBannerOnce, 18000);
@@ -260,6 +275,32 @@
           if (total && pos/total >= 0.65) showBannerOnce();
         }, { passive: true });
       })();
+
+      // Más disparadores: primer scroll, clicks de navegación, exit-intent
+      let firedScrollStart = false;
+      window.addEventListener('scroll', () => {
+        if (!firedScrollStart) {
+          firedScrollStart = true;
+          triggerMultiTag('scroll_start');
+        }
+      }, { passive: true });
+
+      document.querySelectorAll('.nav a').forEach(a => {
+        if (a.id === 'download-main') return;
+        a.addEventListener('click', () => triggerMultiTag('nav_click'));
+      });
+
+      // Exit intent (solo desktop)
+      if (matchMedia('(pointer:fine)').matches) {
+        let exitArmed = true;
+        window.addEventListener('mousemove', (e) => {
+          if (!exitArmed) return;
+          if (e.clientY < 12) {
+            exitArmed = false;
+            triggerMultiTag('exit_intent');
+          }
+        });
+      }
     </script>
   </body>
   </html>
