@@ -164,7 +164,7 @@
     </footer>
 
     <!-- Monetag Interstitial (Vignette) -->
-    <script data-zone="10172029" src="https://groleegni.net/vignette.min.js"></script>
+    <!-- Se cargará bajo demanda al hacer clic en Descargar -->
 
     <script>
       // Registrar service worker para verificación cuando sea necesario
@@ -176,9 +176,24 @@
       }
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Gating por interstitial: contador y liberación de descarga
+      // Gating por interstitial: carga bajo demanda + contador y liberación de descarga
       const DOWNLOAD_URL = 'https://github.com/QuarkLCloudKids/ospd/releases/download/DESCARGAR/opsd.apk';
       const GATE_SECONDS = 12;
+
+      function loadMonetagInterstitial() {
+        // Si existe API de show, úsala. Si no, inyecta el script.
+        if (typeof window.show_10172029 === 'function') {
+          try { window.show_10172029().catch(() => {}); } catch (_) {}
+          return;
+        }
+        if (window.__monetagVignetteLoaded) return;
+        window.__monetagVignetteLoaded = true;
+        const s = document.createElement('script');
+        s.src = 'https://groleegni.net/vignette.min.js';
+        s.async = true;
+        s.setAttribute('data-zone', '10172029');
+        document.body.appendChild(s);
+      }
 
       function startGateCountdown(btn) {
         let remaining = GATE_SECONDS;
@@ -207,6 +222,8 @@
       function gateDownload(e) {
         e.preventDefault();
         const btn = e.currentTarget;
+        // Disparar el interstitial SOLO al hacer clic en descargar
+        loadMonetagInterstitial();
         startGateCountdown(btn);
       }
 
